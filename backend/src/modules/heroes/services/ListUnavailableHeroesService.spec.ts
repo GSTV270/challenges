@@ -13,7 +13,7 @@ describe('ListUnavailableHeroes', () => {
     );
   });
 
-  it('should be able to create a new hero', async () => {
+  it('should be able to list unavailable hero', async () => {
     await fakeHeroesRepository.create({
       name: 'John1',
       rank: 'S',

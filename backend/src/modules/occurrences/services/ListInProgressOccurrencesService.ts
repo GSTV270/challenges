@@ -1,7 +1,6 @@
 import { injectable, inject } from 'tsyringe';
 import { format } from 'date-fns';
 
-import e from 'express';
 import IOccurrencesRepository from '../repositories/IOccurrencesRepository';
 import IOccurrencesHeroesRepository from '../repositories/IOccurrencesHeroesRepository';
 import Occurrence from '../infra/typeorm/entities/Occurrence';

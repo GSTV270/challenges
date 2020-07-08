@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
 
+import ensureAuthenticated from '@modules/users/infra/http/middlewares/EnsureAuthenticated';
 import HeroesController from '../controllers/HeroesController';
 import AvailableHeroesController from '../controllers/AvailableHeroesController';
 import UnavailableHeroesController from '../controllers/UnavailableHeroesController';
@@ -10,6 +11,8 @@ const heroesRouter = Router();
 const heroesController = new HeroesController();
 const availableHeroesController = new AvailableHeroesController();
 const unavailableHeroesController = new UnavailableHeroesController();
+
+heroesRouter.use(ensureAuthenticated);
 
 heroesRouter.get('/available', availableHeroesController.index);
 heroesRouter.get('/unavailable', unavailableHeroesController.index);

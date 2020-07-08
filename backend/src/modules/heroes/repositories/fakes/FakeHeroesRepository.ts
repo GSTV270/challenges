@@ -96,6 +96,7 @@ class HeroesRepository implements IHeroesRepository {
       latitude,
       longitude,
       available: true,
+      occurrence_hero: [],
     });
 
     this.heroes.push(hero);
