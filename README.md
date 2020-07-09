@@ -21,7 +21,7 @@
 ## Experiência
 
 Durante o desenvolvimento do iHeros pude superar diversos desafio muito interessantes.
-Levando em conta o desafio proposto e meus conhecimentos, optei por desenvolvevor a aplicação com frontend utilizando ReactJS que consome uma api desenvolvida com NodeJS e Express.js.
+Levando em conta o desafio proposto e meus conhecimentos, optei por desenvolvevor a aplicação com frontend utilizando ReactJS que consome uma api desenvolvida com NodeJS e Express.js. A api foi desenvolvida aplicando DDD e TDD.
 Para persistencia dos dados, optei por SQLite, que me parece a melhor opção nesse contexto de desafio, pois facilita a preparação do ambiente para testes. Em um caso real de uso, provavelmente teria utilizado PostgreSQL.
 
 ## Instruções
@@ -29,21 +29,18 @@ Para persistencia dos dados, optei por SQLite, que me parece a melhor opção ne
 ### Backend
 Como optei por utilizar SQLite, já coloquei no repositório uma base criada (backend/src/database/database.sqlite), mas caso seja necessário criar uma nova, basta excluir esse arquivo e rodar o comando
 
-#### com npm
 ```sh
 npm run typeorm migration:run
 ```
 
-ou
+e para executar a rotina de testes unitários, basta utilizar o comando
 
-#### com yarn
 ```sh
-yarn typeorm migration:run
+npm run test
 ```
 
 No mais, basta executar na pasta backend os comandos
 
-#### com npm
 ```sh
 npm install
 ```
@@ -53,20 +50,10 @@ e
 npm run dev:server
 ```
 
-#### com yarn
-```sh
-yarn
-```
-e
-
-```sh
-yarn dev:server
-```
 
 ### Frontend
 Basta executar na pasta frontend os comandos
 
-#### com npm
 ```sh
 npm install
 ```
@@ -78,12 +65,3 @@ npm run start
 
 
 
-#### com yarn
-```sh
-yarn
-```
-e
-
-```sh
-yarn start
-```
