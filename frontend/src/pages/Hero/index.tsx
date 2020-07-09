@@ -14,8 +14,8 @@ interface Params {
 }
 
 const Hero: React.FC = () => {
-  const [name, setName] = useState('Saitama');
-  const [rank, setRank] = useState('S');
+  const [name, setName] = useState('');
+  const [rank, setRank] = useState('');
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
     0,
     0,
@@ -33,20 +33,9 @@ const Hero: React.FC = () => {
       setName(response.data.name);
       setRank(response.data.rank);
       setSelectedPosition([response.data.latitude, response.data.longitude]);
+      setInitialPosition([response.data.latitude, response.data.longitude]);
     });
   }, [params]);
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-
-        setInitialPosition([latitude, longitude]);
-      },
-      (error) => console.warn(error),
-      { enableHighAccuracy: true },
-    );
-  }, []);
 
   const handleMapClick = useCallback((event: LeafletMouseEvent) => {
     setSelectedPosition([event.latlng.lat, event.latlng.lng]);
@@ -116,13 +105,18 @@ const Hero: React.FC = () => {
         <Information>
           <div>
             <strong>Nome do Herói</strong>
-            <input value={name} onChange={(e) => setName(e.target.value)} />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Ex: Saitama"
+            />
           </div>
           <div>
             <strong>Ranking (S/A/B/C)</strong>
             <input
               value={rank}
               onChange={(e) => setRank(e.target.value.toUpperCase())}
+              placeholder="Ex: S"
             />
           </div>
           <div>

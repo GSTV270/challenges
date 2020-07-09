@@ -3,7 +3,6 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { Link, useRouteMatch } from 'react-router-dom';
 
-import { report } from 'process';
 import { Container, Content, Information } from './styles';
 import api from '../../services/api';
 
@@ -33,7 +32,6 @@ const Occurrence: React.FC = () => {
 
   useEffect(() => {
     api.get(`/occurrences/${params.id}`).then((response) => {
-      console.log(response.data);
       setOccurrence({
         ...response.data.occurrence,
         formattedDate: response.data.formattedDate,
@@ -45,10 +43,6 @@ const Occurrence: React.FC = () => {
       ]);
     });
   }, [params.id]);
-
-  useEffect(() => {
-    console.log(occurrence);
-  }, [occurrence]);
 
   return (
     <Container>

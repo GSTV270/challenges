@@ -27,7 +27,7 @@ export const Container = styled.div`
     strong {
       text-overflow: ellipsis;
       overflow: hidden;
-      padding: 3px 0;
+      padding: 3px 5px;
     }
 
     a {
