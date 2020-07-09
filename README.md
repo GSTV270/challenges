@@ -1,44 +1,89 @@
-# Challenges
+# ZRP DEV Challenge - iHeros
 
-Com o objetivo de se tornar um funcionário ZRP você precisa provar para o nosso timme, um grupo de profissionais extremamente competentes e habilidosos, que você será capaz de analisar, prever e desenvolver as tarefas que te forem designadas.
+## Contruído utilizando
 
-Para cada um dos possíveis cargos que você for se candidatar haverá desafios dos mais diversos níveis, podendo estes serem _fáceis_, _normais_ ou _difíceis_. Você pode submeter o teste que achar que mais se encaixa com o seu perfil.
+### Backend
+* [Node.JS](https://github.com/nodejs/node)
+* [Typescript](https://github.com/microsoft/TypeScript)
+* [Express](https://github.com/expressjs/express)
+* [node-sqlite3](https://github.com/mapbox/node-sqlite3)
+* [Jest](https://github.com/facebook/jest)
+* [Socket.IO](https://github.com/socketio/socket.io)
+* [TypeORM](https://github.com/typeorm/typeorm)
 
-## Como submeter o seu projeto
+### Frontend
+* [ReactJS](https://github.com/facebook/react)
+* [Typescript](https://github.com/microsoft/TypeScript)
+* [styled-components](https://github.com/styled-components/styled-components)
+* [axios](https://github.com/axios/axios)
+* [leaflet](https://github.com/Leaflet/Leaflet)
 
-Cada área e cada projeto tem a sua própria regra quanto a submissão do desafio. Leia atentamente as regras e instruções antes de enviar seu projeto.
+## Experiência
 
-> Dúvidas? Envie um email para [jobs@zrp.com.br](jobs@zrp.com.br).
+Durante o desenvolvimento do iHeros pude superar diversos desafio muito interessantes.
+Levando em conta o desafio proposto e meus conhecimentos, optei por desenvolvevor a aplicação com frontend utilizando ReactJS que consome uma api desenvolvida com NodeJS e Express.js.
+Para persistencia dos dados, optei por SQLite, que me parece a melhor opção nesse contexto de desafio, pois facilita a preparação do ambiente para testes. Em um caso real de uso, provavelmente teria utilizado PostgreSQL.
 
-## Como o processo seletivo da ZRP funciona
+## Instruções
 
-### Primeira Fase - Seleção
+### Backend
+Como optei por utilizar SQLite, já coloquei no repositório uma base criada (backend/src/database/database.sqlite), mas caso seja necessário criar uma nova, basta excluir esse arquivo e rodar o comando
 
-Na primeira fase você será avaliado por um dos sócios da ZRP. O objetivo dessa avaliação é ver se você possui aderência à cultura da empresa. Nós prezamos por pessoas prestativas, pró-ativas, comunicativas e interessadas em aprender. Suas core skills serão os seus diferenciais aqui.
+#### com npm
+```sh
+npm run typeorm migration:run
+```
 
-### Segunda Fase - Desafio
+ou
 
-Se você passar na primeira fase você deverá escolher um desafio que você deseja enviar e nos dar uma previsão de quanto tempo você demorará para enviar aquele desafio.
-Não há tempo limite para a submissão, porém você será avaliado pela sua capacidade de prever seu tempo de entrega.
+#### com yarn
+```sh
+yarn typeorm migration:run
+```
 
-Depois desse envio nosso time irá avaliar se:
+No mais, basta executar na pasta backend os comandos
 
-- Você teve uma boa previsão do tempo que você levaria para resolver o problema
-- Resolveu com precisão o problema apresentado
-- Cumpriu com os requisitos e critérios de avaliação daquele desafio
+#### com npm
+```sh
+npm install
+```
+e
 
-### Terceira Fase - Feedback
+```sh
+npm run dev:server
+```
 
-Para aqueles que submeteram o desafio da segunda fase haverá uma revisão do desafio pelo nosso time e te chamaremos para um breve call de feedback dizendo se você foi contratado ou não e o porque da decisão.
+#### com yarn
+```sh
+yarn
+```
+e
 
-### Escolha o seu caminho
+```sh
+yarn dev:server
+```
 
-Para qual vaga você está se candidatando?
+### Frontend
+Basta executar na pasta frontend os comandos
 
-- [Desenvolvedor](./dev)
-- [Devops](./devops)
-- [Designer](./design)
-- [PO](./po)
-- [QA](./qa)
-- [Comercial](./comercial)
-- [RH](./rh)
+#### com npm
+```sh
+npm install
+```
+e
+
+```sh
+npm run start
+```
+
+
+
+#### com yarn
+```sh
+yarn
+```
+e
+
+```sh
+yarn start
+```
